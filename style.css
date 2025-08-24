@@ -1,0 +1,297 @@
+/* General */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Poppins, sans-serif; background: #0f2027; color: #fff; }
+
+/* Navbar */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: rgba(0,0,0,0.5); }
+nav .logo { font-size: 1.5rem; font-weight: bold; color: #00ffcc; }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a { color: #fff; text-decoration: none; transition: 0.3s; }
+nav ul li a:hover, nav ul li a.active { color: #00ffcc; }
+
+/* Hero */
+.hero { text-align: center; padding: 50px 20px; }
+.hero .profile-pic img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #00ffcc; box-shadow: 0 0 25px #00ffcc; }
+.hero h1 { font-size: 2.5rem; margin-top: 15px; }
+.highlight { color: #00ffcc; }
+.typing { font-size: 1.2rem; margin-top: 10px; color: #aaa; }
+
+/* Sections */
+.page { padding: 50px 20px; max-width: 900px; margin: auto; }
+h2 { color: #00ffcc; margin-bottom: 20px; }
+
+/* Projects */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.project-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; text-align: center; transition: 0.3s; }
+.project-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,255,204,0.5); }
+
+/* Achievements */
+.achievement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.achievement-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; text-align: center; }
+.achievement-card img { width: 100%; border-radius: 10px; }
+
+/* Resume Flipbook */
+#flipbook { width: 80%; height: 500px; margin: 20px auto; }
+#flipbook img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+/* Contact */
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+.contact-form input, .contact-form textarea { padding: 12px; border-radius: 8px; border: none; outline: none; }
+.contact-form button { background: #00ffcc; padding: 12px; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; }
+
+/* Buttons */
+.btn { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #00ffcc; color: #000; border-radius: 25px; text-decoration: none; transition: 0.3s; }
+.btn-outline { border: 2px solid #00ffcc; background: transparent; color: #00ffcc; }
+.btn:hover { background: #00ffaa; color: #000; }
+
+/* Footer */
+footer { text-align: center; padding: 20px; background: rgba(0,0,0,0.6); margin-top: 40px; }
+
+/* loder */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --rotateVal: 0deg;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #111;
+    font-family: 'roboto', sans-serif;
+}
+
+.anim-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 111111111111111111111111111111!important;
+    pointer-events: none;
+}
+
+.shutter{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background: #000;
+}
+
+.shutter.top{
+    top: 0;
+    z-index: 2;
+    animation: slide-top 1s 3.5s forwards 1;
+}
+
+.shutter.top::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    bottom: 0;
+    left: -100%;
+    animation: slide-left 1s 2.5s forwards 1;
+}
+
+.shutter.bottom{
+    bottom: 0;
+    animation: slide-bottom 1s 3.5s forwards 1;
+}
+
+.circle{
+    position: absolute;
+    left: 50%;
+    bottom: -100px;
+    transform: translateX(-50%) rotate(-90deg);
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    animation: rotate 1s 1.25s forwards 1;
+}
+
+.circle:nth-child(2){
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    animation: rotate 1s 1.25s forwards reverse 1, bg .5s 2.25s forwards 1;
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    background-color: #000;
+    z-index: 2;
+}
+
+.circle:nth-child(2)::before{
+    animation: bg .5s 2.25s forwards 1;
+}
+
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0 ;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    transform: rotate(0deg) skew(90deg);
+    animation: drawCircle .5s forwards 1;
+}
+
+.circle:nth-child(2) .box{
+    animation: drawCircle .5s .75s forwards 1;
+}
+
+@keyframes drawCircle{
+    0%{
+        transform: rotate(var(--rotateVal)) skewX(90deg);
+    }
+    100%{
+        transform: rotate(var(--rotateVal)) skewX(10deg);
+    }
+}
+
+@keyframes rotate{
+    100%{
+        transform: translateX(-50%) rotate(-270deg);
+    }
+}
+
+@keyframes bg{
+    100%{
+        background: #fff;
+    }
+}
+
+@keyframes slide-left{
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes slide-top{
+    100%{
+        top: -100%;
+    }
+}
+
+@keyframes slide-bottom{
+    100%{
+        bottom: -100%;
+    }
+}
+
+.header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.content{
+    width: 80%;
+    min-width: 500px;
+}
+
+.heading{
+    font-size: 80px;
+    text-transform: capitalize;
+}
+
+.heading span{
+    font-size: 120px;
+    display: block;
+}
+
+.content p{
+    margin: 50px 0;
+    width: 90%;
+}
+
+.btn{
+    padding: 10px 40px;
+    border: none;
+    border-radius: 50px;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.right{
+    width: 40%;
+    height: 100%;
+    background: url(https://raw.githubusercontent.com/kunaal438/web-ux/master/bg.png);
+    background-size: cover;
+    position: relative;
+}
+
+.right p{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 60px;
+    padding: 10px;
+    width: 100px;
+    border: 5px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 996px){
+    .header{
+        flex-direction: column-reverse;
+    }
+    .left, .right{
+        width: 100%;
+    }
+    .right{
+        height: 300px;
+        background-position: bottom center;
+    }
+    .heading, .heading span{
+        font-size: 7vw;
+    }
+    .content{
+        min-width: 70%;
+    }
+    .content p{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+    .haeding, .heading span{
+        font-size: 60px;
+    }
+}

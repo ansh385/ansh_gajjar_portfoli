@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Ansh Gajjar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-white">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-info" href="index.html">Ansh Gajjar</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Form -->
+  <section class="container py-5" style="margin-top:80px; max-width:700px;">
+    <h2 class="text-info text-center mb-4">Get In Touch</h2>
+    <form action="https://formspree.io/f/your-id" method="POST" class="p-4 border border-info rounded shadow">
+      <div class="mb-3">
+        <label class="form-label">Your Name</label>
+        <input type="text" name="name" class="form-control bg-dark text-white border-info" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Your Email</label>
+        <input type="email" name="email" class="form-control bg-dark text-white border-info" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea name="message" rows="5" class="form-control bg-dark text-white border-info" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-info w-100">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="bg-dark text-center py-3 mt-5"><p class="mb-0">© 2025 Ansh Gajjar | Made with ❤️</p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
